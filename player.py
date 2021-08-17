@@ -35,6 +35,7 @@ class Player(animation.animateSprite) :
         
         self.all_projectiles.add(Projectile(self))
         self.start_animation()
+        self.game.sound_manager.play('tir')
 
     def move_right(self):
         
