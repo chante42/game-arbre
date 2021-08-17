@@ -5,6 +5,9 @@ from game import Game
 
 pygame.init()
 
+#defnir une clock
+clock =pygame.time.Clock()
+FPS = 60
         
 # généré la fenetre de notre jeux 
 pygame.display.set_caption("game-Arbre")
@@ -26,7 +29,7 @@ play_button_rect = play_button.get_rect()
 play_button_rect.x = math.ceil(screen.get_width() / 3.33)
 play_button_rect.y = math.ceil(screen.get_height() / 2)
 
-
+ 
 
 game = Game()
 
@@ -66,4 +69,6 @@ while running:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if play_button_rect.collidepoint(event.pos):
                 game.start()
-            
+
+    # fixer le nombre de FPS sur la clock
+    clock.tick(FPS)        
