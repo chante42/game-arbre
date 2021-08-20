@@ -61,6 +61,8 @@ class Game :
         # recupérer les projectile du joueur
         for projectile in self.player.all_projectiles:
             projectile.move()
+            projectile.update_animation()
+
 
         # gestion des projectiles
         self.player.all_projectiles.draw(screen)

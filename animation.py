@@ -1,4 +1,5 @@
 import pygame
+import projectile
 
 # classe qui va s'ocuper es animation
 class animateSprite(pygame.sprite.Sprite):
@@ -46,11 +47,22 @@ def load_animation_images(sprite_name):
     
     return images
 
+def calcul_animation_images(sprite_name):
+    # definir une fonction pour calculer les rotation d'un sprite
+    # calcule les 24 image
+    images = []
+    path=f'assets/{sprite_name}.png'
+    tmp = pygame.image.load(path)
+    for i in range(0,23):
+        images.append(pygame.transform.rotozoom(tmp, i*(360/24), 1))
+    
+    return images
 
 #definir un dictionnaire qui va definir les images chargés de chaque spite
 # mummy -> [... mummy1.png, ... ]
 animation = { 
     'mummy'  : load_animation_images("mummy"),
     'player' : load_animation_images('player'),
-    'alien'  : load_animation_images('alien')
+    'alien'  : load_animation_images('alien'),
+    'projectile' : calcul_animation_images('projectile')
     }

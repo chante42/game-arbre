@@ -54,6 +54,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
             pygame.quit()
+            exit()
 
         # detecte si un joueur appuit sur une touche du clavier
         elif event.type == pygame.KEYDOWN:
@@ -77,4 +78,4 @@ while running:
                 game.sound_manager.play("click")
 
     # fixer le nombre de FPS sur la clock
-    clock.tick(FPS)        
+    clock.tick(FPS)         

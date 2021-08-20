@@ -16,6 +16,7 @@ class Monster(animation.animateSprite):
         self.game = game
         self.start_animation()
         self.loot_amount = 10 
+        
     def set_speed(self, speed) :
         self.default_speed = speed
         self.velocity = random.randint(1,self.default_speed) 
